@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  postgres:
+    image: postgres:13
+    volumes:
+      - /path/to/all/config/and/date/directory:/var/lib/postgresql/data
+      - /path/to/testscript.sql/directory:/docker-entrypoint-initdb.d
+    network_mode: host
+    restart: always
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: docker
